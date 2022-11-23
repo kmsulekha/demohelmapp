@@ -29,3 +29,10 @@
     minikube start --driver=none
     apt install conntrack
     minikube status
+
+
+## deploy application using helm
+
+    kubectl create ns nginx
+    helm install mynginx nginx --namespace nginx
+    
