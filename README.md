@@ -26,13 +26,61 @@
   
 ## start minikube 
 
-    minikube start --driver=none
-    apt install conntrack
+    minikube start --force
     minikube status
+    
+## clone the repo
 
-
-## deploy application using helm
-
+    git clone https://github.com/kmsulekha/demohelmapp.git
+    cd demohelmapp
+    ls
+    
+ ## kubectl command to create namespace
+    
     kubectl create ns nginx
+    kubectl get ns
+ 
+## deploy helm chart using helm
+
     helm install mynginx nginx --namespace nginx
+    
+## helm command to list all the deployed helm chart
+
+    helm list
+    helm list -n nginx
+    
+## kubectl command to check deployement
+
+    kubectl get deployment -n nginx
+    
+## kubectl command to check pods
+
+    kubectl get pods -n nginx
+    
+## kubectl command to check services
+
+    kubectl get svc -n nginx
+    
+## kubectl command to check node 
+
+    kubectl get nodes -o wide
+    
+ -- copy node ip and service node port
+ 
+ ## access the application using curl
+ 
+    curl <node ip>:<nodeport>
+    
+ ## kubectl command to check all the created resources in a particular namespace
+ 
+    kubectl get all -n nginx
+    
+## helm command to upgrade application
+
+    helm upgrade <application name> <chart name> -n nginx
+    
+## helm command to uninstall application
+
+    helm uninstall <application name>
+    
     
