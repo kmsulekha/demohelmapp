@@ -80,10 +80,10 @@
     
 ## helm command to upgrade application
 
-    helm upgrade <application name> <chart name> -n nginx
+    helm upgrade <release name> <chart name> -n nginx
     
 ## helm command to uninstall application
 
-    helm uninstall <application name>
+    helm uninstall <release name>
     
     
