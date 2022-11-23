@@ -29,6 +29,9 @@
     minikube start --force
     minikube status
     
+    
+# Deploy Application 
+
 ## clone the repo
 
     git clone https://github.com/kmsulekha/demohelmapp.git
