@@ -29,6 +29,15 @@
     minikube start --force
     minikube status
     
+## build docker image
+
+    cd  /oot/python-flask-docker
+    docker build -t <docker hub username>/sample-app .
+    
+## push docker image to docker hub
+
+    docker login
+    docker push <docker hub username>/sample-app
     
 # Deploy Application 
 
@@ -40,29 +49,29 @@
     
  ## kubectl command to create namespace
     
-    kubectl create ns nginx
+    kubectl create ns sample-app 
     kubectl get ns
  
 ## deploy helm chart using helm
 
-    helm install mynginx nginx --namespace nginx
+    helm install sample-app  sample-app  --namespace sample-app 
     
 ## helm command to list all the deployed helm chart
 
     helm list
-    helm list -n nginx
+    helm list -n sample-app 
     
 ## kubectl command to check deployement
 
-    kubectl get deployment -n nginx
+    kubectl get deployment -n sample-app 
     
 ## kubectl command to check pods
 
-    kubectl get pods -n nginx
+    kubectl get pods -n sample-app 
     
 ## kubectl command to check services
 
-    kubectl get svc -n nginx
+    kubectl get svc -n sample-app 
     
 ## kubectl command to check node 
 
@@ -76,11 +85,11 @@
     
  ## kubectl command to check all the created resources in a particular namespace
  
-    kubectl get all -n nginx
+    kubectl get all -n sample-app 
     
 ## helm command to upgrade application
 
-    helm upgrade <release name> <chart name> -n nginx
+    helm upgrade <release name> <chart name> -n sample-app 
     
 ## helm command to uninstall application
 
